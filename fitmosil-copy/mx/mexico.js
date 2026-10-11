@@ -5,11 +5,12 @@ const goals = {
 const purchase = document.querySelector('#purchase');
 const dialog = document.querySelector('#checkout-dialog');
 function updateGoal() {
-  const selected = goals[document.querySelector('input[name="objective"]:checked').value];
+  const objective = document.querySelector('input[name="objective"]:checked').value;
+  const selected = goals[objective];
   document.querySelector('#goal-copy').textContent = selected.copy;
   document.querySelector('#training-copy').textContent = selected.training;
   document.querySelector('#checkout-plan').textContent = selected.name;
-  purchase.textContent = `QUIERO ${selected.name}`;
+  purchase.textContent = objective === 'cut' ? 'QUIERO PERDER GRASA' : 'QUIERO GANAR MUSCULO';
   purchase.href = selected.href || '#checkout-dialog';
   if (selected.href) purchase.removeAttribute('aria-haspopup');
   else purchase.setAttribute('aria-haspopup', 'dialog');
