@@ -1,6 +1,6 @@
 const goals = {
   cut: { name: 'FM CUT', copy: 'Entrenamiento y nutrición enfocados en perder grasa, mantener tu masa muscular y construir hábitos sostenibles.', training: 'Un plan orientado a perder grasa, con registro de marcas, pesos y evolución.' },
-  build: { name: 'FM BUILD', copy: 'Entrenamiento de fuerza y nutrición enfocados en construir masa muscular y progresar con una estructura clara.', training: 'Un plan de fuerza orientado a ganar músculo, con registro de marcas, pesos y evolución.' }
+  build: { name: 'FM BUILD', copy: 'Entrenamiento de fuerza y nutrición enfocados en construir masa muscular y progresar con una estructura clara.', training: 'Un plan de fuerza orientado a ganar músculo, con registro de marcas, pesos y evolución.', href: 'https://app.harbiz.io/checkout-external/santiagomorenosilva?plan=wrcjGWYCXuQN7omqR&lang=es' }
 };
 const purchase = document.querySelector('#purchase');
 const dialog = document.querySelector('#checkout-dialog');
@@ -10,10 +10,19 @@ function updateGoal() {
   document.querySelector('#training-copy').textContent = selected.training;
   document.querySelector('#checkout-plan').textContent = selected.name;
   purchase.textContent = `QUIERO ${selected.name}`;
+  purchase.href = selected.href || '#checkout-dialog';
+  if (selected.href) purchase.removeAttribute('aria-haspopup');
+  else purchase.setAttribute('aria-haspopup', 'dialog');
 }
 document.querySelectorAll('input[name="objective"]').forEach(input => input.addEventListener('change', updateGoal));
 updateGoal();
-purchase.addEventListener('click', () => { dialog.showModal(); document.body.classList.add('modal-open'); });
+purchase.addEventListener('click', event => {
+  const selected = goals[document.querySelector('input[name="objective"]:checked').value];
+  if (selected.href) return;
+  event.preventDefault();
+  dialog.showModal();
+  document.body.classList.add('modal-open');
+});
 dialog.querySelector('.close').addEventListener('click', () => dialog.close());
 document.querySelector('#back-to-pack').addEventListener('click', () => dialog.close());
 dialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
