@@ -3,7 +3,8 @@ const packGoals = {
     name: 'ganancia de músculo',
     description: 'Entrenamiento de fuerza y nutrición orientados a construir masa muscular y progresar con una estructura clara.',
     training: 'Entrenamiento orientado a ganar músculo',
-    button: 'Consultar pack · ganar músculo'
+    button: 'QUIERO GANAR MUSCULO',
+    href: 'https://app.harbiz.io/checkout-external/santiagomorenosilva?plan=MyLrK9mXABrhTP2d9&lang=es'
   },
   fat: {
     name: 'pérdida de grasa',
@@ -19,7 +20,7 @@ function updatePackGoal() {
   document.querySelector('#training-benefit').textContent = goal.training;
   const contact = document.querySelector('#pack-contact');
   contact.textContent = goal.button;
-  contact.href = `https://wa.me/34674088093?text=${encodeURIComponent(`Hola Santi, quiero información sobre el pack de ${goal.name} de 20,95 € cada 4 semanas.`)}`;
+  contact.href = goal.href || `https://wa.me/34674088093?text=${encodeURIComponent(`Hola Santi, quiero información sobre el pack de ${goal.name} de 20,95 € cada 4 semanas.`)}`;
 }
 document.querySelectorAll('input[name="pack-goal"]').forEach((input) => input.addEventListener('change', updatePackGoal));
 updatePackGoal();
