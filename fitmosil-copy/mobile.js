@@ -68,4 +68,11 @@
 
   render();
   viewport.addEventListener('change', render);
+  window.addEventListener('load', () => {
+    if (!viewport.matches) return;
+    const id = window.location.hash.slice(1);
+    if (['hero', 'planes', 'pack-completo', 'app', 'asesoria'].includes(id)) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'instant' });
+    }
+  }, { once: true });
 })();
