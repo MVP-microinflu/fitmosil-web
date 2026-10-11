@@ -47,7 +47,7 @@ document.querySelector('#waitlist-form').addEventListener('submit', async (event
   const button = form.querySelector('button[type="submit"]');
   if (button.disabled || !form.reportValidity()) return;
   const values = new FormData(form);
-  values.set('_subject', `Método FM: ${values.get('interes')}`);
+  values.set('_subject', 'Método FM: Lista de espera');
   const status = document.querySelector('#form-status');
   button.disabled = true;
   button.textContent = 'Enviando…';
