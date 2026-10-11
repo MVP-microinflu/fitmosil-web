@@ -10,7 +10,8 @@ const packGoals = {
     name: 'pérdida de grasa',
     description: 'Entrenamiento y nutrición orientados a perder grasa, mantener tu masa muscular y construir hábitos sostenibles.',
     training: 'Entrenamiento orientado a perder grasa',
-    button: 'Consultar pack · perder grasa'
+    button: 'QUIERO PERDER GRASA',
+    href: 'https://app.harbiz.io/checkout-external/santiagomorenosilva?plan=6Pmf8XcFhtJ8Fuu2P&lang=es'
   }
 };
 function updatePackGoal() {
@@ -20,7 +21,7 @@ function updatePackGoal() {
   document.querySelector('#training-benefit').textContent = goal.training;
   const contact = document.querySelector('#pack-contact');
   contact.textContent = goal.button;
-  contact.href = goal.href || `https://wa.me/34674088093?text=${encodeURIComponent(`Hola Santi, quiero información sobre el pack de ${goal.name} de 20,95 € cada 4 semanas.`)}`;
+  contact.href = goal.href;
 }
 document.querySelectorAll('input[name="pack-goal"]').forEach((input) => input.addEventListener('change', updatePackGoal));
 updatePackGoal();
