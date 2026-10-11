@@ -1,5 +1,5 @@
 const goals = {
-  cut: { name: 'FM CUT', copy: 'Entrenamiento y nutrición enfocados en perder grasa, mantener tu masa muscular y construir hábitos sostenibles.', training: 'Un plan orientado a perder grasa, con registro de marcas, pesos y evolución.' },
+  cut: { name: 'FM CUT', copy: 'Entrenamiento y nutrición enfocados en perder grasa, mantener tu masa muscular y construir hábitos sostenibles.', training: 'Un plan orientado a perder grasa, con registro de marcas, pesos y evolución.', href: 'https://app.harbiz.io/checkout-external/santiagomorenosilva?plan=JGo2tjfHMWFro7rwd&lang=es' },
   build: { name: 'FM BUILD', copy: 'Entrenamiento de fuerza y nutrición enfocados en construir masa muscular y progresar con una estructura clara.', training: 'Un plan de fuerza orientado a ganar músculo, con registro de marcas, pesos y evolución.', href: 'https://app.harbiz.io/checkout-external/santiagomorenosilva?plan=wrcjGWYCXuQN7omqR&lang=es' }
 };
 const purchase = document.querySelector('#purchase');
