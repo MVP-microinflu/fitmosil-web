@@ -7,7 +7,7 @@
   <meta name="description" content="Fitmosil: pack de entrenamiento y nutrición por 20,95 € cada 4 semanas y asesoría personalizada Método FM.">
   <link rel="stylesheet" href="styles.css?v=20261010-plans">
   <link rel="stylesheet" href="plans.css?v=20261010-1">
-  <script src="plans.js" defer></script>
+  <script src="plans.js?v=20261011-formspree" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -206,7 +206,16 @@
     <dialog class="waitlist-dialog" id="lista-espera" aria-labelledby="waitlist-title">
     <button class="dialog-close" type="button" aria-label="Cerrar formulario" title="Cerrar formulario">&times;</button>
     <section class="waitlist-section"><div><p class="eyebrow">MÉTODO FM · PLAZAS CERRADAS</p><h2 id="waitlist-title">Tu siguiente paso<br>empieza aquí.</h2><p>Cuéntame qué buscas. Puedes pedir información o solicitar que te avise cuando vuelva a abrir plazas para la asesoría personalizada.</p></div>
-      <form id="waitlist-form"><div class="form-row"><label>Nombre<input name="nombre" autocomplete="given-name" required maxlength="80" placeholder="Tu nombre"></label><label>Email<input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="tu@email.com"></label></div><label>¿Qué te interesa?<select name="interes"><option>Apuntarme a la lista de espera</option><option>Recibir información sobre la asesoría</option></select></label><label>Tu objetivo<select name="objetivo"><option>Perder grasa</option><option>Ganar masa muscular</option><option>Mejorar mis hábitos y mi forma física</option></select></label><label>Cuéntame un poco sobre ti <span>(opcional)</span><textarea name="mensaje" rows="3" maxlength="1500" placeholder="Tu punto de partida y qué te gustaría conseguir"></textarea></label><label class="consent"><input type="checkbox" required><span>He leído la <a href="privacy-policy.html">política de privacidad</a> y acepto que me contactes sobre mi solicitud.</span></label><button class="luxury-cta" type="submit">Preparar mi solicitud</button><p class="form-note">Se abrirá tu correo con la solicitud preparada para enviarla a mosilfit@gmail.com.</p><p id="form-status" role="status"></p></form>
+      <form id="waitlist-form" action="https://formspree.io/f/xbgdkong" method="post">
+        <div class="form-row"><label>Nombre<input name="nombre" autocomplete="given-name" required maxlength="80" placeholder="Tu nombre"></label><label>Email<input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="tu@email.com"></label></div>
+        <label>¿Qué te interesa?<select name="interes"><option>Apuntarme a la lista de espera</option><option>Recibir información sobre la asesoría</option></select></label>
+        <label>Tu objetivo<select name="objetivo"><option>Perder grasa</option><option>Ganar masa muscular</option><option>Mejorar mis hábitos y mi forma física</option></select></label>
+        <label>Cuéntame un poco sobre ti <span>(opcional)</span><textarea name="mensaje" rows="3" maxlength="1500" placeholder="Tu punto de partida y qué te gustaría conseguir"></textarea></label>
+        <input type="text" name="_gotcha" hidden tabindex="-1" autocomplete="off">
+        <label class="consent"><input type="checkbox" name="consentimiento" value="Acepto el contacto sobre mi solicitud" required><span>He leído la <a href="privacy-policy.html">política de privacidad</a> y acepto que me contactes sobre mi solicitud.</span></label>
+        <button class="luxury-cta" type="submit">Enviar solicitud</button>
+        <p class="form-note">Recibirás la respuesta en el email que has indicado.</p><p id="form-status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </form>
     </section>
     </dialog>
   </main>

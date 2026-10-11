@@ -41,19 +41,39 @@ waitlistDialog.addEventListener('click', (event) => {
       event.clientY < bounds.top || event.clientY > bounds.bottom) waitlistDialog.close();
 });
 
-document.querySelector('#waitlist-form').addEventListener('submit', (event) => {
+document.querySelector('#waitlist-form').addEventListener('submit', async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
-  if (!form.reportValidity()) return;
+  const button = form.querySelector('button[type="submit"]');
+  if (button.disabled || !form.reportValidity()) return;
   const values = new FormData(form);
-  const subject = `Método FM: ${values.get('interes')}`;
-  const body = `Nombre: ${values.get('nombre')}\nEmail: ${values.get('email')}\nSolicitud: ${values.get('interes')}\nObjetivo: ${values.get('objetivo')}\n\n${values.get('mensaje')}\n\nHe leído la política de privacidad y acepto que me contactes sobre esta solicitud.`;
-  const emailUrl = `mailto:mosilfit@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  values.set('_subject', `Método FM: ${values.get('interes')}`);
   const status = document.querySelector('#form-status');
-  status.replaceChildren(document.createTextNode('Solicitud preparada. Envíala desde tu aplicación de correo para completar el proceso. '));
-  const retry = document.createElement('a');
-  retry.href = emailUrl;
-  retry.textContent = 'Abrir el correo';
-  status.append(retry);
-  window.location.href = emailUrl;
+  button.disabled = true;
+  button.textContent = 'Enviando…';
+  form.setAttribute('aria-busy', 'true');
+  status.textContent = '';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: values,
+      headers: { Accept: 'application/json' },
+      credentials: 'omit',
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error('Submission failed');
+    form.reset();
+    status.textContent = 'Solicitud enviada. Gracias por tu interés; te responderé en el email que has indicado.';
+  } catch (error) {
+    status.textContent = error.name === 'AbortError'
+      ? 'No hemos podido confirmar el envío. Comprueba tu conexión y vuelve a intentarlo más tarde.'
+      : 'No se ha podido enviar la solicitud. Tus datos siguen aquí; vuelve a intentarlo.';
+  } finally {
+    clearTimeout(timeout);
+    button.disabled = false;
+    button.textContent = 'Enviar solicitud';
+    form.setAttribute('aria-busy', 'false');
+  }
 });
