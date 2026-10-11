@@ -4,28 +4,80 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fitmosil.Trainer</title>
-  <meta name="description" content="Método FM: entrenamiento y nutrición para transformar tu físico y tu estilo de vida.">
-  <link rel="stylesheet" href="styles.css?v=20260612-experiencia-kicker">
+  <meta name="description" content="Fitmosil: pack de entrenamiento y nutrición por 20,95 € cada 4 semanas y asesoría personalizada Método FM.">
+  <link rel="stylesheet" href="styles.css?v=20261010-plans">
+  <link rel="stylesheet" href="plans.css?v=20261010-1">
+  <script src="plans.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <a class="logo-link" href="#hero" aria-label="Fitmosil">
       <img src="assets/logo.avif" alt="Fitmosil logo">
     </a>
-    <a class="header-cta luxury-cta" href="https://api.whatsapp.com/send?phone=+34674088093&text=Hola+Santi%21+Me+gustar%C3%ADa+agendar+una+videollamada+para+ver+c%C3%B3mo+puedes+ayudarme+a+alcanzar+mi+objetivo+f%C3%ADsico"><span>Quiero <strong>empezar</strong></span></a>
+    <nav aria-label="Navegación principal"><a href="#planes">Planes</a><a href="#asesoria">Asesoría FM</a><a href="#app">La app</a></nav>
+    <a class="header-cta luxury-cta" href="#planes">Elige tu plan</a>
   </header>
 
   <main>
     <section class="hero" id="hero">
       <div class="hero-copy">
+        <p class="eyebrow">FITMOSIL · ENTRENAMIENTO + NUTRICIÓN</p>
         <h1>TRANSFORMA TU FÍSICO Y TU ESTILO DE VIDA</h1>
-        <p>Con un sistema de entrenamiento y nutrición diseñado para alcanzar tu objetivo.</p>
-        <a class="primary-cta luxury-cta" href="https://api.whatsapp.com/send?phone=+34674088093&text=Hola+Santi%21+Me+gustar%C3%ADa+agendar+una+videollamada+para+ver+c%C3%B3mo+puedes+ayudarme+a+alcanzar+mi+objetivo+f%C3%ADsico"><span>Quiero <strong>empezar</strong></span></a>
+        <p>Entrena con estructura, mejora tu alimentación y avanza hacia tu objetivo. Elige el plan que encaja con el cambio que buscas.</p>
+        <a class="primary-cta luxury-cta" href="#planes">Elige tu plan</a>
+        <p class="hero-price">Pack completo <strong>20,95 €</strong> / 4 semanas</p>
       </div>
       <img class="hero-image" src="assets/hero.webp" alt="Entrenador en gimnasio con vista de la app">
     </section>
 
-    <section class="method">
+    <div class="brand-band"><span>ENTRENA CON INTENCIÓN.</span><span>COME CON EQUILIBRIO.</span><span>CONSTRUYE TU CAMBIO.</span></div>
+
+    <section class="plans-section" aria-labelledby="plans-title">
+      <div class="service-comparison" aria-labelledby="comparison-title">
+        <p class="eyebrow">DOS FORMAS DE AVANZAR</p>
+        <h2 id="comparison-title">¿Qué encaja contigo?</h2>
+        <table><caption class="visually-hidden">Comparación entre pack completo y asesoría Método FM</caption><thead><tr><th scope="col">Tu servicio</th><th scope="col">Pack completo</th><th scope="col">Asesoría Método FM</th></tr></thead><tbody><tr><th scope="row">Planificación</th><td>Según tu objetivo</td><td>Diseñada para tu caso y rutina</td></tr><tr><th scope="row">Seguimiento</th><td>Registro de progreso en la app</td><td>Acompañamiento y ajustes individuales</td></tr><tr><th scope="row">Precio / plazas</th><td><strong>20,95 €</strong><br>cada 4 semanas</td><td><span class="comparison-status">Plazas cerradas</span></td></tr><tr><th scope="row">Siguiente paso</th><td><a href="#pack-completo">Ver el pack</a></td><td><a href="#lista-espera" aria-haspopup="dialog">Lista de espera</a></td></tr></tbody></table>
+      </div>
+      <div class="section-heading" id="planes"><p class="eyebrow">TU OBJETIVO. TU PLAN.</p><h2 id="plans-title">Entrenamiento + nutrición.<br>Un pack completo.</h2><p>Dos objetivos, la misma base: un plan claro para entrenar, comer mejor y seguir tu evolución.</p></div>
+      <article class="plan-card complete-pack" id="pack-completo">
+        <div class="plan-photo"><img src="assets/hero.webp" alt="Fitmosil y su app de entrenamiento" loading="lazy"><span>ENTRENAMIENTO + NUTRICIÓN</span></div>
+        <div class="plan-details"><p class="eyebrow">PACK COMPLETO</p><h3>Tu objetivo empieza aquí.</h3>
+          <fieldset class="goal-selector"><legend>¿Qué quieres conseguir?</legend><label><input type="radio" name="pack-goal" value="muscle" checked><span>Ganar músculo</span></label><label><input type="radio" name="pack-goal" value="fat"><span>Perder grasa</span></label></fieldset>
+          <p class="goal-description" id="goal-description" aria-live="polite">Entrenamiento de fuerza y nutrición orientados a construir masa muscular y progresar con una estructura clara.</p>
+          <p class="plan-price"><strong>20,95 €</strong><span>/ 4 semanas</span></p><h4>Qué incluye</h4><ul class="plan-features"><li id="training-benefit">Entrenamiento orientado a ganar músculo</li><li>Nutrición enfocada en tu objetivo</li><li>App para consultar tu planificación</li><li>Recetario y registro de kcal y macros</li><li>Registro de marcas, pesos y evolución</li></ul>
+          <a class="luxury-cta plan-cta" id="pack-contact" href="https://wa.me/34674088093?text=Hola%20Santi%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20pack%20de%20ganancia%20de%20m%C3%BAsculo%20de%2020%2C95%20%E2%82%AC%20cada%204%20semanas.">Consultar pack · ganar músculo</a><p class="pack-contact-note">Habla con Santi por WhatsApp para conocer cómo empezar.</p>
+        </div>
+      </article>
+      <p class="plan-note">Los packs están orientados a tu objetivo. Para un plan diseñado en torno a tu caso y acompañamiento individual, conoce la asesoría Método FM.</p>
+    </section>
+
+    <section class="pack-steps" aria-labelledby="pack-steps-title"><p class="eyebrow">ASÍ EMPIEZA TU CAMBIO</p><h2 id="pack-steps-title">De tu objetivo a tu rutina.</h2><ol><li><span>01</span><h3>Elige tu objetivo</h3><p>Ganancia de músculo o pérdida de grasa. Escoge el pack que encaja contigo.</p></li><li><span>02</span><h3>Consulta tu pack</h3><p>Resuelve tus dudas sobre el plan y cómo acceder antes de empezar.</p></li><li><span>03</span><h3>Entrena y avanza</h3><p>Consulta tu planificación en la app y registra tu evolución.</p></li></ol></section>
+
+    <section class="app-heading" id="app"><p class="eyebrow">TU PLAN, SIEMPRE CONTIGO</p><h2>Todo en una misma app.</h2><p>Entrenamientos, recetas y progreso. Tu día a día, con más claridad.</p></section>
+    <div id="app-preview">
+      <section class="phones" aria-label="Capturas de la app">
+        <div class="phone phone-left">
+          <img class="phone-screen" src="assets/screen-workouts.webp" alt="Entrenamientos en la app" loading="lazy">
+          <img class="phone-frame" src="assets/phone-frame.avif" alt="" loading="lazy">
+        </div>
+        <div class="phone phone-center">
+          <img class="phone-screen" src="assets/screen-plan.webp" alt="Plan de hoy en la app" loading="lazy">
+          <img class="phone-frame" src="assets/phone-frame.avif" alt="" loading="lazy">
+        </div>
+        <div class="phone phone-right">
+          <img class="phone-screen" src="assets/screen-recipes.webp" alt="Recetas en la app" loading="lazy">
+          <img class="phone-frame" src="assets/phone-frame.avif" alt="" loading="lazy">
+        </div>
+      </section>
+      <div class="store-row app-availability" aria-label="App disponible en Google Play y App Store">
+        <span>App disponible en</span>
+        <span class="store-pill"><img src="assets/playstore.svg" alt="Google Play"><span></span><img src="assets/appstore.svg" alt="App Store"></span>
+      </div>
+    </div>
+
+    <section class="advisory-heading" id="asesoria" aria-labelledby="advisory-title"><div><p class="eyebrow">ASESORÍA PERSONALIZADA</p><h2 id="advisory-title">Método FM.<br>Tu caso. Tu camino.</h2><p>Un plan diseñado para ti: tu punto de partida, tu rutina y tu estilo de vida. Con seguimiento y ajustes para avanzar semana a semana.</p><a class="luxury-cta" href="#lista-espera" aria-haspopup="dialog">Lista de espera</a></div><div class="advisory-status"><span class="status-label">PLAZAS CERRADAS</span><h3>La próxima plaza<br>puede ser la tuya.</h3><p>Déjame tus datos para solicitar información o entrar en la lista de espera.</p><a href="#lista-espera" aria-haspopup="dialog">Lista de espera →</a></div></section>
+
+    <section class="method" id="metodo-fm">
       <div class="method-foundation">
         <p class="method-kicker">La base del cambio</p>
         <h2>¿En qué se basa el método FM?</h2>
@@ -62,30 +114,6 @@
       </div>
     </section>
 
-    <section class="phones" aria-label="Capturas de la app">
-      <div class="phone phone-left">
-        <img class="phone-screen" src="assets/screen-workouts.webp" alt="Entrenamientos en la app">
-        <img class="phone-frame" src="assets/phone-frame.avif" alt="">
-      </div>
-      <div class="phone phone-center">
-        <img class="phone-screen" src="assets/screen-plan.webp" alt="Plan de hoy en la app">
-        <img class="phone-frame" src="assets/phone-frame.avif" alt="">
-      </div>
-      <div class="phone phone-right">
-        <img class="phone-screen" src="assets/screen-recipes.webp" alt="Recetas en la app">
-        <img class="phone-frame" src="assets/phone-frame.avif" alt="">
-      </div>
-    </section>
-
-    <div class="store-row app-availability" aria-label="App disponible en Google Play y App Store">
-      <span>App disponible en</span>
-      <span class="store-pill">
-        <img src="assets/playstore.svg" alt="Google Play">
-        <span></span>
-        <img src="assets/appstore.svg" alt="App Store">
-      </span>
-    </div>
-
     <section class="program">
       <div class="program-content">
         <p class="program-kicker">Experiencia</p>
@@ -117,7 +145,7 @@
             <div><strong>Control de métricas y registro de marcas y pesos</strong><p>Apunta tu evolución y toma decisiones con datos, no con sensaciones.</p></div>
           </li>
         </ul>
-        <a class="program-cta luxury-cta" href="https://api.whatsapp.com/send?phone=+34674088093&text=Hola+Santi%21+Me+gustar%C3%ADa+agendar+una+videollamada+para+ver+c%C3%B3mo+puedes+ayudarme+a+alcanzar+mi+objetivo+f%C3%ADsico"><span>Quiero <strong>empezar</strong></span></a>
+        <a class="program-cta luxury-cta" href="#lista-espera" aria-haspopup="dialog">Lista de espera</a>
       </div>
     </section>
 
@@ -175,6 +203,12 @@
         </article>
       </div>
     </section>
+    <dialog class="waitlist-dialog" id="lista-espera" aria-labelledby="waitlist-title">
+    <button class="dialog-close" type="button" aria-label="Cerrar formulario" title="Cerrar formulario">&times;</button>
+    <section class="waitlist-section"><div><p class="eyebrow">MÉTODO FM · PLAZAS CERRADAS</p><h2 id="waitlist-title">Tu siguiente paso<br>empieza aquí.</h2><p>Cuéntame qué buscas. Puedes pedir información o solicitar que te avise cuando vuelva a abrir plazas para la asesoría personalizada.</p></div>
+      <form id="waitlist-form"><div class="form-row"><label>Nombre<input name="nombre" autocomplete="given-name" required maxlength="80" placeholder="Tu nombre"></label><label>Email<input name="email" type="email" autocomplete="email" required maxlength="150" placeholder="tu@email.com"></label></div><label>¿Qué te interesa?<select name="interes"><option>Apuntarme a la lista de espera</option><option>Recibir información sobre la asesoría</option></select></label><label>Tu objetivo<select name="objetivo"><option>Perder grasa</option><option>Ganar masa muscular</option><option>Mejorar mis hábitos y mi forma física</option></select></label><label>Cuéntame un poco sobre ti <span>(opcional)</span><textarea name="mensaje" rows="3" maxlength="1500" placeholder="Tu punto de partida y qué te gustaría conseguir"></textarea></label><label class="consent"><input type="checkbox" required><span>He leído la <a href="privacy-policy.html">política de privacidad</a> y acepto que me contactes sobre mi solicitud.</span></label><button class="luxury-cta" type="submit">Preparar mi solicitud</button><p class="form-note">Se abrirá tu correo con la solicitud preparada para enviarla a mosilfit@gmail.com.</p><p id="form-status" role="status"></p></form>
+    </section>
+    </dialog>
   </main>
 
   <footer class="site-footer">
